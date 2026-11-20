@@ -118,3 +118,6 @@ dist
 .pnp.*
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Node
+ai_service/venv/
+ai_service/__pycache__/
+ai_service/.env
