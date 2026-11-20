@@ -121,3 +121,4 @@ dist
 ai_service/venv/
 ai_service/__pycache__/
 ai_service/.env
+.env
