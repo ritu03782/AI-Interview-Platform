@@ -1,19 +1,39 @@
-import jwt from "jsonwebtoken"
-const isAuth = async(req,res,next)=>{
-    try{
-         const token = req.cookies?.token
-        if(!token){
-            return res.status(400).json({message:"Unauthorized request"})
-        }
-        const verifyToken =  jwt.verify(token, process.env.JWT_SECRET)
 
-        if(!verifyToken){
-            return res.status(400).json({message:"user does not have a valid token"})
-        }
-        req.userId = verifyToken.userId
-        next()
-    }catch(error){
-        return res.status(500).json({message:`isAuth error ${error}`})
+import jwt from "jsonwebtoken";
+
+const isAuth = (req, res, next) => {
+  try {
+    const token = req.cookies?.token;
+
+    if (!token) {
+      return res.status(401).json({
+        message: "Unauthorized. Please login.",
+      });
     }
-}
-export default isAuth
+
+    const verifyToken = jwt.verify(
+      token,
+      process.env.JWT_SECRET
+    );
+
+    req.userId = verifyToken.userId;
+
+    next();
+
+  } catch (error) {
+    if (
+      error.name === "TokenExpiredError" ||
+      error.name === "JsonWebTokenError"
+    ) {
+      return res.status(401).json({
+        message: "Session expired or invalid. Please login again.",
+      });
+    }
+
+    return res.status(500).json({
+      message: "Authentication error",
+    });
+  }
+};
+
+export default isAuth;
