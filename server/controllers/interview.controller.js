@@ -480,7 +480,8 @@ export const finishInterview = async (req,res)=>{
       return res.status(200).json({
         finalScore: Number(finalScore.toFixed(1)),
         confidence: Number(avgConfidence.toFixed(1)),
-        communication: Number(avgCorrectness.toFixed(1)),
+        communication: Number(avgCommunication.toFixed(1)),
+        correctness: Number(avgCorrectness.toFixed(1)),
         questionWiseScore: interview.questions.map((q)=>({
             question: q.question,
             score: q.score || 0,

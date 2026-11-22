@@ -33,7 +33,7 @@ def analyze_resume(request: ResumeRequest):
     except Exception as error:
         print("Unexpected error:", repr(error))
         raise HTTPException(status_code=500, detail="Resume analysis failed")
-    
+   
 # app = FastAPI()
 
 # ai = OpenRouterService()

@@ -14,7 +14,7 @@ function Timer({timeLeft , totalTime}) {
             textColor:"#ef4444",
             trailColor:"#e5e7eb",
         })}
-        />;
+        />
     </div>
   )
 }

@@ -169,7 +169,7 @@ function Step1SetUp({onStart}) {
                   onClick={(e)=>{e.stopPropagation();
                     handleUploadResume();
                   }}
-                  className='mt-4 bg-gray-900 text-white px-5 py2 
+                  className='mt-4 bg-gray-900 text-white px-5 py-2 
                 rounded-lg hover:bg-gray-800 transition'>
                    {analyzing ?"Analyzing...":"Analyze Resume"}
                 </motion.button>)}

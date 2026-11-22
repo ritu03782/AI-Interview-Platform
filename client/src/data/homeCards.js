@@ -26,8 +26,8 @@ const homeCards = [
     {
         image:analyticsImg,
         icon:BsBarChart ,
-        title:"Dowloadable PDF Report",
-        desc:"Detailed strengths, weaknesses and improvement insights."
+        title:"History & Analytics",
+        desc:"Track past interviews, scores and progress over time."
     }
    
 ]
