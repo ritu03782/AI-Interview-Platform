@@ -7,7 +7,7 @@ import InterviewHistory from './pages/InterviewHistory.jsx';
 import Pricing from './pages/Pricing.jsx';
 import InterviewReport from './pages/InterviewReport.jsx';
 import useAuth from "./hooks/useAuth";
-export const ServerUrl = import.meta.env.VITE_SERVER_URL;;
+export const ServerUrl = https://ai-interview-platform-1-6u52.onrender.com
 function App() {
   useAuth();
   return (
